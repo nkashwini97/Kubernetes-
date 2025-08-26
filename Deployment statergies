@@ -12,3 +12,35 @@ with feature toggles providing an additional layer of control by separating
 deployment from release. 
 
 
+Here's a comparison of key deployment 
+strategies:
+1. Blue-Green Deployment
+How it works:
+Two identical production environments 
+
+
+are maintained: "Blue" (current version) and "Green" (new version). Once the new version is ready and tested, all user traffic is immediately switched to the "Green" environment. 
+Pros:
+Near-instant rollback by redirecting traffic back to the stable "Blue" environment. 
+Cons:
+Increased infrastructure costs due to duplication, and all users are exposed to the new version at once, potentially increasing the blast radius of issues. 
+Best for:
+Major upgrades or changes where a fast rollback is critical. 
+2. Canary Deployment
+How it works:
+The new version is released to a small, isolated subset of users (a "canary") for monitoring and testing. Traffic is gradually shifted to the new version if performance is good. 
+Pros:
+Significantly reduces the risk and impact of potential bugs, as only a small group of users is affected. Allows for real-world testing with minimal risk. 
+Cons:
+Can be more complex to manage, and requires careful monitoring and traffic management. 
+Best for:
+High-risk changes or when gathering real-world feedback is essential. 
+3. Rolling Deployment
+How it works:
+New instances of the application are added while old instances are removed, gradually replacing the entire set of servers with the new version. 
+Pros:
+Less resource-intensive than Blue-Green, as it doesn't require duplicating the entire environment. Provides a controlled, incremental update. 
+Cons:
+The update process takes more time, and if the new version has an issue, it affects an increasing number of users before you can fully roll back. 
+Best for:
+Applications that can tolerate gradual updates and when infrastructure duplication is not feasible. 
