@@ -1,0 +1,14 @@
+Deployment strategies, such as Blue-Green, 
+Canary, and Rolling, differ in how they release 
+new application versions by managing infrastructure,
+risk, and user impact. Blue-Green deployments duplicate 
+infrastructure for rapid rollback but introduce risk with a 
+single switch, while Canary deployments gradually expose new versions 
+to small user subsets for early testing and risk mitigation. 
+Rolling deployments incrementally replace old instances with new ones,
+offering a controlled, gradual update but potentially taking longer. 
+The best strategy depends on the application, team capabilities, and goals, 
+with feature toggles providing an additional layer of control by separating 
+deployment from release. 
+
+
